@@ -1,0 +1,14 @@
+image: elixir:latest
+
+test:
+  coverage: /\[TOTAL\]\s+(\d+\.\d+)%/
+  script:
+    - mix local.hex --force
+    - mix local.rebar --force
+    - mix deps.get
+    - MIX_ENV=test mix coveralls.html
+  artifacts:
+    expire_in: 2 week
+    when: always
+    paths:
+      - cover
