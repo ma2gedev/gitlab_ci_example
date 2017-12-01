@@ -1,18 +1,11 @@
 defmodule GitlabCiExample do
-  @moduledoc """
-  Documentation for GitlabCiExample.
-  """
 
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> GitlabCiExample.hello
-      :world
-
-  """
-  def hello do
-    :world
+  def calc(method, x, y) do
+    case method do
+      :add -> x + y
+      :multiply -> x * y
+      _ -> x - y
+    end
   end
+
 end
